@@ -33,6 +33,9 @@ bot.on("messageCreate", (msg) => {
         let counters
         (msg.content == "wiena") ? counters = wienaCounts : counters = counts
         (msg.content == "wiena") ? wiena = "**wiena**" : wiena = "wiena"
+        if (msg.content == "DEVTEST") {
+            bot.createMessage(msg.channel.id, "TESTDEV")
+        }
         if (!counters[channelID]) {
           counters[channelID] = 0
         }
